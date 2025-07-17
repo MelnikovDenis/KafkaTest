@@ -4,7 +4,7 @@ namespace KafkaTest.App.Models;
 
 public record class TestModel
 {
-    private static volatile int idCounter = 0;
+    private static int idCounter = 0;
 
     private readonly static IReadOnlyList<string> SeedingAdjectives = [
         "Brave",
@@ -37,7 +37,7 @@ public record class TestModel
         Id = Interlocked.Increment(ref idCounter);
 
         var adjective = SeedingAdjectives[RandomNumberGenerator.GetInt32(0, SeedingAdjectives.Count)];
-        var noun = SeedingNouns[RandomNumberGenerator.GetInt32(0, SeedingAdjectives.Count)];
+        var noun = SeedingNouns[RandomNumberGenerator.GetInt32(0, SeedingNouns.Count)];
 
         Name = string.Join(' ', adjective, noun); 
     }

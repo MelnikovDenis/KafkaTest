@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 
 var builder = Host.CreateDefaultBuilder(args);
 
-builder.ConfigureHostConfiguration(config => 
+builder.ConfigureHostConfiguration(config =>
 {
     config.AddJsonFile("appsettings.json", false, false);
 });
@@ -18,7 +18,7 @@ builder.ConfigureLogging((context, logging) =>
 
 builder.ConfigureServices((context, services) =>
 {
-    services.AddMyServices(context.Configuration);
+    services.AddMyConsumer(context.Configuration);
 });
 
 var host = builder.Build();

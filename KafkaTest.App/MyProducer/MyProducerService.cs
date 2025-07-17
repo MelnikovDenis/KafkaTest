@@ -65,7 +65,7 @@ internal class MyProducerService : IDisposable
 
             if (disposing)
             {
-                _producer.Dispose();
+                _producer?.Dispose();
 #pragma warning disable CS8625 // Литерал, равный NULL, не может быть преобразован в ссылочный тип, не допускающий значение NULL.
                 _producer = null;
 #pragma warning restore CS8625 // Литерал, равный NULL, не может быть преобразован в ссылочный тип, не допускающий значение NULL.
